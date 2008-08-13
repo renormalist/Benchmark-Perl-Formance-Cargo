@@ -3,6 +3,8 @@ package Perl::Formance::Cargo;
 use warnings;
 use strict;
 
+use 5.005; # I don't really know yet, but that's the goal
+
 use vars qw( $VERSION ); $VERSION = '0.01';
 
 =head1 NAME
@@ -60,10 +62,29 @@ L<http://search.cpan.org/dist/Perl-Formance-Cargo>
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2008 Steffen Schwigon, all rights reserved.
+Copyright 2008 Steffen Schwigon.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
+
+Some contained files come from the SpamAssassin Public Corpus which
+includes the following note regarding the use of the messages:
+
+  - All headers are reproduced in full.  Some address obfuscation has taken
+    place, and hostnames in some cases have been replaced with
+    "spamassassin.taint.org" (which has a valid MX record).  In most cases
+    though, the headers appear as they were received.
+  
+  - All of these messages were posted to public fora, were sent to me in the
+    knowledge that they may be made public, were sent by me, or originated as
+    newsletters from public news web sites.
+  
+  - relying on data from public networked blacklists like DNSBLs, Razor, DCC
+    or Pyzor for identification of these messages is not recommended, as a
+    previous downloader of this corpus might have reported them!
+  
+  - Copyright for the text in the messages remains with the original senders.
+
 
 =cut
 
