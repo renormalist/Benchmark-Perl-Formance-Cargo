@@ -60,6 +60,8 @@ L<http://search.cpan.org/dist/Perl-Formance-Cargo>
 
 =head1 ACKNOWLEDGEMENTS
 
+ANDK for the hint to decouple this from Perl::Formance.
+
 =head1 COPYRIGHT & LICENSE
 
 Copyright 2008 Steffen Schwigon.
