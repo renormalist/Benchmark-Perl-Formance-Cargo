@@ -13,9 +13,9 @@ Perl::Formance::Cargo - Invariant cargo files for Perl::Formance
 
 =head1 ABOUT
 
-This distribution carries all large invariant data that is used for
-the benchmarking in Perl::Formance, so it not spams CPAN on every new
-version of Perl::Formance.
+This distribution carries large invariant data used for benchmarking
+in Perl::Formance so that CPAN is not spammed on every new version of
+Perl::Formance.
 
 =head1 AUTHOR
 
