@@ -5871,6 +5871,7 @@ lib/auto/Perl/Formance/Cargo/SA/spam_2/cmds
 lib/Perl/Formance/Cargo.pm
 Makefile.PL
 MANIFEST
+MANIFEST.SKIP
 META.yml			# Will be created by "make dist"
 README
 t/00-load.t
