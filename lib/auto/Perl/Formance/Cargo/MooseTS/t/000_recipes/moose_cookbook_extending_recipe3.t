@@ -13,7 +13,7 @@ BEGIN {
     if ($@) {
         diag 'Test::Output is required for this test';
         ok(1);
-        exit 0;
+        plan "skip_all";#exit 0;
     }
 }
 

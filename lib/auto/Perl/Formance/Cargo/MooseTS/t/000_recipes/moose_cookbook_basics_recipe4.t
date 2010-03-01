@@ -1,19 +1,21 @@
 #!/usr/bin/perl -w
 
 use strict;
-use Test::More 'no_plan';
+use Test::More;
 use Test::Exception;
 $| = 1;
 
-
-
+SKIP: {
 # =begin testing SETUP
 BEGIN {
     eval 'use Regexp::Common; use Locale::US;';
     if ($@) {
         diag 'Regexp::Common & Locale::US required for this test';
         ok(1);
-        exit 0;
+        eval 'use vars qw(%RE)';
+        done_testing;
+        last SKIP;
+        #exit 0;
     }
 }
 
@@ -26,8 +28,9 @@ BEGIN {
   use Moose;
   use Moose::Util::TypeConstraints;
 
-  use Locale::US;
-  use Regexp::Common 'zip';
+  eval "use Locale::US";
+  eval "use Regexp::Common 'zip'";
+  use vars qw(%RE);
 
   my $STATES = Locale::US->new;
   subtype 'USState'
@@ -314,7 +317,7 @@ lives_ok {
 '... we live correctly with good args';
 }
 
-
-
+}
+done_testing;
 
 1;

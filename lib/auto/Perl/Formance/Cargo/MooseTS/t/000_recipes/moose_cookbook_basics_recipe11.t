@@ -13,7 +13,7 @@ BEGIN {
     if ($@) {
         diag 'DateTime & DateTime::Calendar::Mayan required for this test';
         ok(1);
-        exit 0;
+        plan "skip_all";# exit 0;
     }
 }
 
