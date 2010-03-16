@@ -13,7 +13,7 @@ BEGIN {
     if ($@) {
         diag 'HTTP::Headers, Params::Coerce & URI required for this test';
         ok(1);
-        plan "skip_all";#exit 0;
+        exit 0;
     }
 }
 
