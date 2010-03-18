@@ -2,7 +2,6 @@
 
 use strict;
 use lib  qw {blib/lib};
-use vars qw /$VERSION/;
 
 use Regexp::Common qw /RE_num_int/;
 use t::Common qw /run_new_tests aa sample/;
@@ -324,3 +323,4 @@ run_new_tests  targets      => \%targets,
 ;
 
 
+__END__

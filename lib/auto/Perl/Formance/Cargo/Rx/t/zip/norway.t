@@ -2,14 +2,12 @@
 
 use strict;
 use lib  qw {blib/lib};
-use vars qw /$VERSION/;
 
 use Regexp::Common qw /RE_zip_Norway/;
 use t::Common qw /run_new_tests cross pdd dd a/;
 
 use warnings;
 
-($VERSION) = q $Revision: 2.104 $ =~ /[\d.]+/;
 
 my $norway      = $RE {zip} {Norway};
 my $yes_prefix  = $RE {zip} {Norway} {-prefix  => 'yes'};
@@ -115,3 +113,4 @@ run_new_tests tests        => \@tests,
               version_from => 'Regexp::Common::zip',
 ;
 
+__END__

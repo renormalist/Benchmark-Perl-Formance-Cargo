@@ -2,7 +2,6 @@
 
 use strict;
 use lib  qw {blib/lib};
-use vars qw /$VERSION/;
 
 use Config;
 use Regexp::Common;
@@ -10,10 +9,17 @@ use t::Common '5.008';
 
 use warnings;
 
-my $MAX = $Config {use64bitint} ? do {no warnings; "9000000000000000"}
-                                : 0x7FFFFFFF;
+my $bits64 = $Config {use64bitint};
+#
+# CPAN testers claim it fails on 5.8.8 and darwin 9.0.
+#
+$bits64 = 0 if $Config {osname} eq 'darwin' &&
+               $Config {osvers} eq '9.0'    &&
+               $] == 5.008008;
 
-($VERSION) = q $Revision: 2.105 $ =~ /[\d.]+/;
+my $MAX = $bits64 ? do {no warnings; "9000000000000000"}
+                  : 0x7FFFFFFF;
+
 
 sub create_parts;
 
@@ -60,3 +66,4 @@ sub create_parts {
 }
 
 
+__END__

@@ -2,7 +2,7 @@ package t::Common;
 
 use strict;
 use lib  qw {blib/lib};
-use vars qw /$VERSION @ISA @EXPORT @EXPORT_OK $DEBUG/;
+use vars qw /@ISA @EXPORT @EXPORT_OK $DEBUG/;
 
 use Regexp::Common;
 use Exporter ();
@@ -28,7 +28,6 @@ sub run_fail;
 sub count_me;
 sub is_skipped;
 
-($VERSION) = q $Revision: 2.114 $ =~ /[\d.]+/;
 
 my $count;
 
@@ -190,11 +189,7 @@ sub run_tests {
     my $runs = count_test_runs $tests, \%passes, \%failures;
     print "1..$runs\n";
 
-    {
-        no strict 'refs';
-        print "not " unless defined ${$args {version} . '::VERSION'};
-        print "ok ", ++ $count, " - ", $args {version}, "::VERSION\n";
-    }
+    print "ok ", ++ $count, "\n";
 
     my @test_names = map {$_ -> [1]} @$tests;
     my @tag_names  = keys %tag_names;
@@ -719,9 +714,7 @@ sub run_new_tests {
 
     # Check whether a version is defined.
     if (defined $version_from) {
-        no strict 'refs';
-        print "not " unless defined ${$version_from . '::VERSION'};
-        print "ok    ", ++ $count, " - ", $version_from, "::VERSION\n";
+        print "ok ", ++ $count, "\n";
     }
 
     if ($extra_runs_sub) {
@@ -821,3 +814,128 @@ sub sample {
 
 1;
 
+__END__
+
+=head1 DESCRIPTION
+
+C<run_new_tests> is called with three (named) parameters:
+
+=over 4
+
+=item C<tests>
+
+A references to an array of I<tests> (explained below).
+
+=item C<targets>
+
+A reference to a hash of I<targets> (explained below).
+
+=item C<version_from>
+
+The name of the file that is checked for a version number.
+
+=back
+
+=head2 Targets
+
+Targets provide a set of strings to match against. Targets are 
+indexed by name. Each target is a hash, with the following keys:
+
+=over 4
+
+=item C<list>
+
+Required. This is a reference to an array that will act as building
+blocks to build strings to match against. In the simplest form, this
+is just an array with strings - but typically, this is an array of
+arrays, each subarray used to create a string.
+
+=item C<query>
+
+A coderef. For each entry in array given above, this coderef is called.
+It takes a set of arguments and returns a string to match against. If
+the corresponding entry in C<list> is reference to an array, all its
+elements are passed - otherwise, the entry is passed as a whole. Extra
+arguments provided with C<query_args> below are prepended. If no coderef
+is given, C<sub {$_ [0]}> is assumed.
+
+=item C<wanted>
+
+A coderef. If the target is used for positive matches (that is, it's
+expected to match), this sub is called with the same arguments as C<query>
+- except that C<wanted_args> are prepended. It should return a list of
+strings as if the regular expression was called with C<{-keep}>. The
+string to match against may be assumed to be C<$_>. If no coderef is given,
+C<sub {$_}> is assumed.
+
+=back
+
+=head2 Tests
+
+The tests to run are put in an array, and run in that order. Each test
+tests a specific pattern. Up to seven types of tests are performed, depending
+whether the tests includes expected failures, expected passes or both. 
+Expected passes are tested as a regular expression, as a regular expression
+with the C<{-keep}> option, as a subroutine, as an object using the C<match>
+method, and as an object using the C<subs> method. Expected failures are 
+tested as a regular expression, and as a subroutine. Each test is a hash
+with the following keys:
+
+=over 4
+
+=item C<name>
+
+The name of this test - mostly used in the test output.
+
+=item C<regex>
+
+The pattern to test with.
+
+=item C<sub>
+
+The subroutine to test with, if any.
+
+=item C<sub_args>
+
+Any arguments that need to be passed into the subroutine. If more than
+one argument needs to be passed, use a reference to an array - the array
+will be flattened when calling the subroutine.
+
+=item C<query_args>
+
+Extra arguments to pass into the C<query> coderef for all the targets
+belonging to this tests, if not overriden as discussed below.
+
+=item C<wanted_args>
+
+Extra arguments to pass into the C<wanted> coderef for all the targets
+belonging to this tests, if not overriden as discussed below.
+
+=item C<pass>
+
+Indicates which targets (discussed above) should be run with expected
+passes.  The value of C<pass> is either a reference to an array - the
+array containing the names of the targets to run, or a reference to a
+hash. In the latter case, the keys are the targets to be run, while the
+keys are hash references, containing more configuration options for the
+target. Values allowed:
+
+=over 4
+
+=item C<query_args>
+
+Extra arguments to pass into the C<query> coderef belonging to this test.
+See discussion above.
+
+=item C<wanted_args>
+
+Extra arguments to pass into the C<wanted> coderef belonging to this test.
+See discussion above.
+
+=back
+
+=item C<fail>
+
+As C<pass>, except that it will list targets with an expected failure.
+
+=back

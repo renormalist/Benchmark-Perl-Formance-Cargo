@@ -4,13 +4,11 @@
 
 use strict;
 use lib  qw {blib/lib};
-use vars qw /$VERSION/;
 
 use Regexp::Common qw /RE_ALL/;
 
 use warnings;
 
-($VERSION) = q $Revision: 2.101 $ =~ /[\d.]+/;
 
 my @data = (
     [[qw /num hex/]             => ["abcdef", "123.456", "1a2B.3c"]],
@@ -74,3 +72,4 @@ foreach my $data (@data) {
 
 
 
+__END__

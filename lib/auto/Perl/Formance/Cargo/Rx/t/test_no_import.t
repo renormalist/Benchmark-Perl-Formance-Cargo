@@ -11,3 +11,4 @@ print defined &Regexp::Common::URL::pattern ? "not ok 2\n" : "ok 2\n";
 print $; eq "\034" ? "ok 3" : "not ok 3";
 print ' # $; eq "\034"', "\n";
 
+__END__

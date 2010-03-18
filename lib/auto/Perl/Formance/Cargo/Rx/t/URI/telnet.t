@@ -2,14 +2,12 @@
 
 use strict;
 use lib  qw {blib/lib};
-use vars qw /$VERSION/;
 
 use Regexp::Common;
 use t::Common;
 
 $^W = 1;
 
-($VERSION) = q $Revision: 2.104 $ =~ /[\d.]+/;
 
 sub create_parts;
 
@@ -106,3 +104,4 @@ sub filter {
     return !defined $_ [0] -> [0] && defined $_ [0] -> [1] ? 0 : 1
 }
 
+__END__

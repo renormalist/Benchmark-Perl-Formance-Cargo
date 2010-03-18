@@ -2,12 +2,10 @@
 
 use strict;
 use lib  qw {blib/lib};
-use vars qw /$VERSION/;
 
 use Regexp::Common;
 use warnings;
 
-($VERSION) = q $Revision: 2.101 $ =~ /[\d.]+/;
 
 my @tests__ = ("", "\n", "hello, world");
 
@@ -88,3 +86,4 @@ while (my ($name, $codes) = each %code) {
 }
 
 
+__END__

@@ -2,13 +2,11 @@
 
 use strict;
 use lib  qw {blib/lib};
-use vars qw /$VERSION/;
 
 use Regexp::Common;
 
 use warnings;
 
-($VERSION) = q $Revision: 2.107 $ =~ /[\d.]+/;
 
 sub passes;
 sub failures;
@@ -60,8 +58,7 @@ my $max  = 1;
    $max += @failures * @tests;
 print "1..$max\n";
 
-print "not " unless defined $Regexp::Common::zip::VERSION;
-print "ok ", ++ $count, " - Regexp::Common::zip::VERSION\n";
+print "ok ", ++ $count, "\n";
 
 
 sub run_test {
@@ -210,3 +207,4 @@ sub failures {
     @failures;
 }
 
+__END__
