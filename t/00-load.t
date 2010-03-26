@@ -3,7 +3,7 @@
 use Test::More tests => 1;
 
 BEGIN {
-	use_ok( 'Perl::Formance::Cargo' );
+	use_ok( 'Benchmark::Perl::Formance::Cargo' );
 }
 
-diag( "Testing Perl::Formance::Cargo $Perl::Formance::Cargo::VERSION, Perl $], $^X" );
+diag( "Testing Benchmark::Perl::Formance::Cargo $Benchmark::Perl::Formance::Cargo::VERSION, Perl $], $^X" );

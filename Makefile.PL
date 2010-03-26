@@ -1,8 +1,8 @@
 use inc::Module::Install;
 
 # Define metadata
-name           'Perl-Formance-Cargo';
-all_from       'lib/Perl/Formance/Cargo.pm';
+name           'Benchmark-Perl-Formance-Cargo';
+all_from       'lib/Benchmark/Perl/Formance/Cargo.pm';
 
 # Specific dependencies
 

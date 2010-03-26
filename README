@@ -1,8 +1,8 @@
 Perl-Formance-Cargo
 
 This distribution carries all large invariant data that is used for
-the benchmarking in Perl::Formance, so it not spams CPAN on every new
-version of Perl::Formance.
+the benchmarking in Benchmark::Perl::Formance, so it not spams CPAN on every new
+version of Benchmark::Perl::Formance.
 
 INSTALLATION
 
@@ -19,7 +19,7 @@ SUPPORT AND DOCUMENTATION
 After installing, you can find documentation for this module with the
 perldoc command.
 
-    perldoc Perl::Formance::Cargo
+    perldoc Benchmark::Perl::Formance::Cargo
 
 You can also look for information at:
 

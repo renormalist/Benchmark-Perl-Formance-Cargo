@@ -1,4 +1,4 @@
-package Perl::Formance::Cargo;
+package Benchmark::Perl::Formance::Cargo;
 
 use warnings;
 use strict;
@@ -9,13 +9,13 @@ use vars qw( $VERSION ); $VERSION = '0.01';
 
 =head1 NAME
 
-Perl::Formance::Cargo - Invariant cargo files for Perl::Formance
+Benchmark::Perl::Formance::Cargo - Invariant cargo files for Benchmark::Perl::Formance
 
 =head1 ABOUT
 
 This distribution carries large invariant data used for benchmarking
-in Perl::Formance so that CPAN is not spammed on every new version of
-Perl::Formance.
+in Benchmark::Perl::Formance so that CPAN is not spammed on every new version of
+Benchmark::Perl::Formance.
 
 =head1 AUTHOR
 
@@ -34,7 +34,7 @@ progress on your bug as I make changes.
 
 You can find documentation for this module with the perldoc command.
 
-    perldoc Perl::Formance::Cargo
+    perldoc Benchmark::Perl::Formance::Cargo
 
 You can also look for information at:
 
@@ -60,7 +60,7 @@ L<http://search.cpan.org/dist/Perl-Formance-Cargo>
 
 =head1 ACKNOWLEDGEMENTS
 
-ANDK for the hint to decouple this from Perl::Formance.
+ANDK for the hint to decouple this from Benchmark::Perl::Formance.
 
 =head1 COPYRIGHT & LICENSE
 
@@ -90,4 +90,4 @@ includes the following note regarding the use of the messages:
 
 =cut
 
-1; # End of Perl::Formance::Cargo
+1; # End of Benchmark::Perl::Formance::Cargo
