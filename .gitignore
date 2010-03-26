@@ -9,4 +9,6 @@ pm_to_blib*
 Perl-Formance-Cargo-*
 cover_db
 META.yml
-MANIFEST.bak
+MANIFEST*
+!MANIFEST.SKIP
+
