@@ -1,3 +1,13 @@
+2010-07-27  Steffen Schwigon  <ss5@renormalist.net>
+
+	* 0.02
+
+	* snapshot of Perl::Critic sources
+	- We will use this to run Perl::Critic on itself, once with the
+	  upstream version and once the bundled cargo version. So
+	  this source files are used as target source code to be
+	  evaluated and as static snapshot of Perl::Critic itself.
+
 2008-08-13  Steffen Schwigon  <ss5@renormalist.net>
 
 	* 0.01
