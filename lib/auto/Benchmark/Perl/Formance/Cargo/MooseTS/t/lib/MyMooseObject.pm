@@ -1,4 +1,5 @@
-package MyMooseObject;
+package # hide from indexer
+  MyMooseObject;
 
 use strict;
 use warnings;

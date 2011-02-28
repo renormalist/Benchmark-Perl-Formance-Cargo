@@ -1,4 +1,5 @@
-package MyMooseA;
+package # hide from indexer
+  MyMooseA;
 
 use Moose;
 

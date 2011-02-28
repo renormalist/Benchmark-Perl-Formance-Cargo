@@ -1,4 +1,5 @@
-package Role::Child;
+package # hide from indexer
+  Role::Child;
 use Moose::Role;
 
 with 'Role::Parent' => { alias => { meth1 => 'aliased_meth1', } };

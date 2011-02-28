@@ -1,5 +1,6 @@
 
-package Foo;
+package # hide from indexer
+  Foo;
 use Moose;
 
 has 'bar' => (is => 'rw');

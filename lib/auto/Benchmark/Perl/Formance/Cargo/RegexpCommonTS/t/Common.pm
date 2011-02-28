@@ -1,4 +1,5 @@
-package t::Common;
+package # hide from indexer
+  t::Common;
 
 use strict;
 use lib  qw {blib/lib};

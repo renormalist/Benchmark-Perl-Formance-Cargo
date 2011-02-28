@@ -1,5 +1,6 @@
 
-package Bar;
+package # hide from indexer
+  Bar;
 use Moose;
 use Moose::Util::TypeConstraints;
 

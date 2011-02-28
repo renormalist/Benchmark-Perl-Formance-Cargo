@@ -1,4 +1,5 @@
-package Role::Parent;
+package # hide from indexer
+  Role::Parent;
 use Moose::Role;
 
 sub meth2  { }

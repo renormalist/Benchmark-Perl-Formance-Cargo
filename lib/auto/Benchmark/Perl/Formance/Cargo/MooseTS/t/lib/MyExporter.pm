@@ -1,6 +1,7 @@
 
 
-package MyExporter;
+package # hide from indexer
+  MyExporter;
 use Moose::Exporter;
 use Test::More;
 
