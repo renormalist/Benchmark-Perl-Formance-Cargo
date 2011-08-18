@@ -7,7 +7,7 @@ use vars qw( $VERSION ); $VERSION = '0.02';
 
 =head1 NAME
 
-Benchmark::Perl::Formance::Cargo - Invariant cargo files for Benchmark::Perl::Formance
+Benchmark::Perl::Formance::Cargo - PerlFormance - Invariant cargo files
 
 =head1 ABOUT
 
