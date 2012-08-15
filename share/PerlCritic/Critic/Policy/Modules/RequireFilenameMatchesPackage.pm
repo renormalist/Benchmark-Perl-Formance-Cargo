@@ -24,7 +24,7 @@ our $VERSION = '1.108';
 #-----------------------------------------------------------------------------
 
 Readonly::Scalar my $DESC => q{Package declaration must match filename};
-Readonly::Scalar my $EXPL => q{Correct the filename or package statement};
+Readonly::Scalar my $EXPL => q{Correct the filename or package}.q{ statement};
 
 #-----------------------------------------------------------------------------
 

@@ -5,7 +5,7 @@ use warnings;
 our $OPT_log;
 our $OPT_match;
 package # hide from indexer
- Actions;
+           Actions;
 use Scalar::Util 'refaddr';
 
 # Generic ast translation done via autoload

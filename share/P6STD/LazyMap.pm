@@ -1,5 +1,5 @@
 package # hide from indexer
- LazyMap;
+           LazyMap;
 use 5.010;
 
 # LazyMap.pm
@@ -178,7 +178,8 @@ sub eager {
 
 # LazyConst produces an infinite list, which stubbornly tries the same value
 # over and over
-{ package LazyConst;
+{ package # hide from indexer
+           LazyConst;
     sub new {
 	my $self = shift;
 	my $xact = shift;
@@ -194,7 +195,8 @@ sub eager {
 }
 
 # LazyRange lazily produces each value in a sequence - useful for quantifiers
-{ package LazyRange;
+{ package # hide from indexer
+           LazyRange;
     sub new {
 	my $class = shift;
 	my $xact = shift;
@@ -220,7 +222,8 @@ sub eager {
 }
 
 # Like above, but reverse
-{ package LazyRangeRev;
+{ package # hide from indexer
+           LazyRangeRev;
     sub new {
 	my $class = shift;
 	my $xact = shift;

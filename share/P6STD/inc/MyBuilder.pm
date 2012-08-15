@@ -1,5 +1,5 @@
 package # hide from indexer
- MyBuilder;
+           MyBuilder;
 use base 'Module::Build';
 
 use warnings;

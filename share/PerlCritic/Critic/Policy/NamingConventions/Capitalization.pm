@@ -222,7 +222,8 @@ sub initialize_if_enabled {
 
     KIND:
     foreach my $kind_of_name ( qw<
-        package                 subroutine
+        package
+        subroutine
         local_lexical_variable  scoped_lexical_variable
         file_lexical_variable   global_variable
         constant                label

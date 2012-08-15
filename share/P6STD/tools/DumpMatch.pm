@@ -1,5 +1,5 @@
 package # hide from indexer
- DumpMatch;
+           DumpMatch;
 use Term::ANSIColor;
 use strict;
 use warnings;
