@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.05      2012-08-15
   - Dist::Zill'ified
   - lib/auto/ now share/
   - add cargo perl6-std for P6STD plugin
