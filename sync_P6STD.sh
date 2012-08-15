@@ -1,7 +1,7 @@
 #! /bin/bash
 
 FROM="perl6-std/"
-TO="lib/auto/Benchmark/Perl/Formance/Cargo/P6STD/"
+TO="share/Benchmark/Perl/Formance/Cargo/P6STD/"
 
 git clone git@github.com:perl6/std.git $FROM
 
