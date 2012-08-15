@@ -19,4 +19,14 @@ rm -fr .git .gitignore
 perl -pni -e 's/^package (?!#)/package # hide from indexer\n /' $(find -name "*.pm")
 popd
 
+echo 'class Hello {
+        method hello {
+                say "Hello, world!";
+        }
+}
+
+my $hello = Hello.new;
+$hello.hello;
+' > $TO/hello.p6
+
 rm -fr $FROM
