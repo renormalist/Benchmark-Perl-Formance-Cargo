@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.06      2012-08-16
   - re-release due to wrong upload subdir
 
 0.05      2012-08-15
