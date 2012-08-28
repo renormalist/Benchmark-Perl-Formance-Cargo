@@ -1,23 +1,21 @@
 #! /bin/bash
 
-FROM="perl6-std/"
+FROM="$HOME/tmp/perlformance-cargo-perl6-std/"
 TO="share/P6STD/"
 
-git clone git@github.com:perl6/std.git $FROM
-
-pushd .
-cd $FROM
-git clean -dxf
-popd
+if [ -d $FROM ] ; then
+	pushd .
+	cd $FROM
+	git pull
+	git clean -dxf
+	popd
+else
+	git clone git@github.com:perl6/std.git $FROM
+fi
 
 mkdir -p $TO
 rsync -a $FROM $TO
-
-pushd .
-cd $TO
-rm -fr .git .gitignore
-perl -pni -e 's/package (?!#)/package # hide from indexer\n           /' $(find -name "*.pm")
-popd
+rm -fr "$TO/.git" "$TO/.gitignore"
 
 echo 'class Hello {
         method hello {
@@ -28,5 +26,3 @@ echo 'class Hello {
 my $hello = Hello.new;
 $hello.hello;
 ' > $TO/hello.p6
-
-rm -fr $FROM
